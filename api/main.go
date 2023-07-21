@@ -13,9 +13,6 @@ func setupRouter() *gin.Engine {
 	return r
 }
 
-// set main branch to track origin/main
-// git branch -u origin/main main
-
 func main() {
 	r := setupRouter()
 	err := r.Run(":8080")

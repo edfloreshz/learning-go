@@ -23,7 +23,7 @@ services:
     image: ${DOCKER_REGISTRY-}
     build:
         context: ..
-        dockerfile: Dockerfile
+        dockerfile: api/Dockerfile
     depends_on: 
         - go-api.database
     ports:

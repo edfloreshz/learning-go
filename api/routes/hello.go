@@ -9,7 +9,7 @@ import (
 )
 
 func Hello(c *gin.Context) {
-	db, err := sql.Open("mysql", "eduardo:test@/service")
+	db, err := sql.Open("mysql", "root:test@/service")
 	if err != nil {
 		panic(err.Error()) // Just for example purpose. You should use proper error handling instead of panic
 	}
@@ -37,6 +37,6 @@ func Hello(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, gin.H{
-		"username": name,
+		"username": "Hello " + name + "!",
 	})
 }

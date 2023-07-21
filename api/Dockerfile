@@ -4,11 +4,11 @@ FROM golang:1.20.5
 
 WORKDIR /app
 
-COPY go.mod go.sum ./
+COPY api/go.mod api/go.sum ./
 RUN go mod download
 
-COPY ./*.go ./
-COPY routes ./routes
+COPY api/*.go ./
+COPY api/routes ./routes
 
 RUN CGO_ENABLED=0 GOOS=linux go build -o /build
 
